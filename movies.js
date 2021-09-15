@@ -8,7 +8,7 @@ let handleMovie= async (req,res)=>{
     let axiosResponse= await axios.get(url);
  let Moviess=axiosResponse.data;
    let lala=Moviess.results.map(item=>{
-       return new Movieee(item.original_title);
+       return new Movieee(item.original_title,item.average_votes,item.average_votes,item.total_votes,item.popularity,item.released_on);
     })
 console.log(lala)
   res.status(200).json(lala)
@@ -16,9 +16,14 @@ console.log(lala)
 class Movieee{
     constructor(title){
         this.title=title;
+        this.average_votes=average_votes;
+        this.total_votes=total_votes;
+        this.popularity=popularity;
+        this.released_on=released_on
         
     }
 }
+
 
 
 
