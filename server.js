@@ -4,68 +4,32 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 require('dotenv').config();
-const weatherData = require('./data/weather.json');
-const { json } = require('express');
+//const weatherData = require('./data/weather.json');
+//const { json } = require('express');
 const PORT = process.env.PORT;
-
-app.get('/', (req, res) => {
-
-    res.status(200).send("Hello world");
-});
-/*
-app.get('/data',(req,res)=>{
-   
-    
-    let city=weatherData[2]
-    console.log(city)
-   
-    let forecastDays=city.data.map((day)=>{
-      
-        return {
-            date:day.valid_date,
-            description:day.weather.description
-        }
-    
-    })
-    
-    let customRespone={
-        forecast:forecastDays,
-        city_name:city.city_name   
-    }
-    res.status(200).json(customRespone);
-});
-*/
-app.get('/weather-data', (req, res) => {
-    let lat = Number(req.query.lat);
-    let lon = Number(req.query.lon);
-    let searchQuery = req.query.searchQuery
-    if (lat && lon || searchQuery) {
-        let result = weatherData.find(item => item.city_name === searchQuery)
-        if (result) {
-            let forcast = result.data.map(item => {
-                return {
-
-                    date: item.datetime,
-                    description: item.weather.description
-                }
+const axios=require("axios");
+const handleMovie=require("./movies")
+const handleWeather=require("./weather")
 
 
-            })
-            res.status(200).json(forcast);
-        
 
 
-    } else {
-        res.status(404).send("resources not found")
-    }
 
-
-}else {
-    res.status(400).send("please provide correct query params");
-}
-
+app.get('/',(req,res)=>{
+    res.status(200).json({"message":"I'm working"})
 })
 
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
+
+
+
+app.get('/weather',handleWeather)
+app.get('/movie',handleMovie)
+
+
+app.listen(PORT,()=>{
+   console.log(`listening to port ${PORT}`)
 });
+
+
+
+
