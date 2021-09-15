@@ -14,7 +14,7 @@ console.log(lala)
   res.status(200).json(lala)
 }
 class Movieee{
-    constructor(title){
+    constructor(title,average_votes,total_votes,popularity,released_on){
         this.title=title;
         this.average_votes=average_votes;
         this.total_votes=total_votes;
