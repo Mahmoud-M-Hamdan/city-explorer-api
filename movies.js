@@ -8,18 +8,18 @@ let handleMovie= async (req,res)=>{
     let axiosResponse= await axios.get(url);
  let Moviess=axiosResponse.data;
    let lala=Moviess.results.map(item=>{
-       return new Movieee(item.title,item.vote_average,item.vote_count,item.popularity,item.released_on);
+       return new Movieee(item.title,item.vote_average,item.vote_count,item.popularity,item.release_date);
     })
 console.log(lala)
   res.status(200).json(lala)
 }
 class Movieee{
-    constructor(title,vote_average,vote_count,popularity,released_on){
+    constructor(title,vote_average,vote_count,popularity,release_date){
         this.title=title;
         this.vote_average=vote_average;
         this.vote_count=vote_count;
         this.popularity=popularity;
-        this.released_on=released_on
+        this.release_date=release_date
         
     }
 }
