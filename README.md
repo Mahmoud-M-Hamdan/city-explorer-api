@@ -1,30 +1,42 @@
 # city-explorer-api
 
-Name of feature:
-Estimate of time needed to complete:4h
-
-Start time: 2h
-
-Finish time: 9h
-
-Actual time needed to complete:7h
-
-
-
 **Author**: Mahmoud Hamdan
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.0 
 
 ## Overview
-the user can search on any country and will take the lon and let and the map and the weather description
+the user can search on any country and will take the lon and let and the map and the weather description and the  popular movies in this country 
 
 ## Getting Started
+creat a new repo.
+clone it
+install the libraries
 
 ## Architecture
-React , Jquery , Bootstrap , jxs 
-
-## Change Log
+React , Jquery , Bootstrap , jxs ,JS, dotenv, nodeJS, nodemon, express.
 
 
 ## Credit and Collaborations
 duha.Abughazleh
 
+
+Name of feature:lab 8
+
+Estimate of time needed to complete: 3
+
+Start time: 2
+
+Finish time: 9
+
+Actual time needed to complete: 7
+
+__________________________________
+
+Name of feature:lab 9
+
+Estimate of time needed to complete: 3
+
+Start time: 2
+
+Finish time: 6
+
+Actual time needed to complete: 4

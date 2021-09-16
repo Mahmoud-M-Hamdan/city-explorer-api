@@ -3,7 +3,7 @@ const axios=require("axios");
 
 
 let handleMovie= async (req,res)=>{
-    let loc = req.query.country_code.toLocaleUpperCase();
+    let loc = req.query.country_code;
     let url=`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.MOVIE_API_KEY}&region=${loc}`;
     let axiosResponse= await axios.get(url);
  let Moviess=axiosResponse.data;
